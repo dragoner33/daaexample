@@ -1,0 +1,17 @@
+<table id="pet-list" class="table">
+    <thead>
+    <tr class="row">
+      <th class="col-sm-4">Nombre</th>
+      <th class="col-sm-3">&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pet of pet" class="row" id="pet-{{pet.id}}">
+        <td class="col-sm-4 name">{{pet.name}}</td>
+        <td class="col-sm-3">
+          <button class="btn btn-primary edit" (click)="onEdit(pet)">Edit</button>
+          <button class="btn btn-warning delete" (click)="onDelete(pet)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

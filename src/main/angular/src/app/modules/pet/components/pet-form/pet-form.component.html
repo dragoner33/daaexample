@@ -1,0 +1,22 @@
+<form id="pet-form" class="mb-5 mb-10">
+    <input name="id" type="hidden" value=""/>
+    
+    <div class="row">
+  
+      <div class="col-sm-5">
+        <input name="name" type="text" value="" placeholder="Nombre" class="form-control" required
+               [(ngModel)]="name"/>
+      </div>
+    <div class="col-sm-5">
+      <select name = "selectpersonas" [(ngModel)]="owner" *ngIf="pet.id === undefined"> 
+        <option [value]="person.id" *ngFor="let person of people">{{person.name}} {{person.surname}}</option>
+      </select>
+    </div>
+      
+      <div class="col-sm-3">
+        <button type="button" id="btnSubmit" class="btn btn-primary"
+                (click)="onModify()">{{pet.id === undefined ? 'Crear' : 'Editar'}}</button>
+        <button type="button" id="btnClear" class="btn" (click)="onClean()">Limpiar</button>
+      </div>
+    </div>
+  </form>
